@@ -1,5 +1,4 @@
 package org.itstep.task06;
-
 /**
  * Задание
  * Описать  базовый  класс  MainString  (Строка).
@@ -20,8 +19,60 @@ package org.itstep.task06;
  * <p>
  * Класс должен находиться в отдельном файле в этом же пакете
  */
-public class Main {
-    public static void main(String[] args) {
-        MainString a1 = new MainString();
+public class MainString {
+    private char []chars;
+    private int len;
+    public MainString() {
+        len=0;
+    }
+    public MainString(char[]chars){
+        this.chars=chars;
+    }
+    public MainString(char[]chars,int len){
+        this.chars=chars;
+        this.len=len;
+    }
+
+    public char[] getChars() {
+        return chars;
+    }
+
+    public void setChars(char[] chars) {
+        this.chars = chars;
+    }
+
+    public int getLen() {
+        return len;
+    }
+
+    public void setLen(int len) {
+        this.len = len;
+    }
+
+    public int length(){
+        int num=0;
+        num = chars.length;
+        return num;
+    }
+    public void clear(){
+        chars=new char[0];
+    }
+
+    public void concat (MainString mainString){
+        int size1,size2, nsize;
+        size1 = chars.length;
+        char[] temp;
+        temp = mainString.getChars();
+        size2 = temp.length;
+        nsize=size1+size2;
+        char[]mass = new char[nsize];
+        for (int i = 0; i < nsize; i++) {
+            if(i<=size1){
+                mass[i]=chars[i];
+            }
+            if(i>=size1){
+                mass[i]=temp[i-size1];
+            }
+        }
     }
 }

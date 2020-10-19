@@ -1,5 +1,5 @@
 package org.itstep.task05;
-
+import org.itstep.task05.Money;
 /**
  * Создать  класс  Money  (Деньги)  для  работы  с  денежными  суммами.
  * <p>
@@ -31,6 +31,9 @@ package org.itstep.task05;
  */
 public class Main {
     public static void main(String[] args) {
-
+        Money a1 = new Money(1, (byte) 3);
+        Money a2 = new Money(1, (byte) 3);
+        a1.addition(a2);
+        System.out.println(a2);
     }
 }

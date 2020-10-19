@@ -1,5 +1,5 @@
 package org.itstep.task04;
-
+import org.itstep.task04.Fraction;
 /**
  * Задание 4
  * Создайте класс Дробь (Fraction).
@@ -23,6 +23,7 @@ package org.itstep.task04;
  */
 public class Main {
     public static void main(String[] args) {
+
         // FIXME: здесь пример использования класса
     }
 }

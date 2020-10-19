@@ -1,5 +1,5 @@
 package org.itstep.task01;
-
+import org.itstep.task01.Human;
 /**
  * Задание 1
  * <p>
@@ -11,7 +11,7 @@ package org.itstep.task01;
  * - контактный телефон (phone),
  * - город (city),
  * - страну (country),
- * - домашний адрес (address).
+ * - домашний адрес (address)
  * <p>
  * Реализуйте методы класса для ввода данных, вывода данных, реализуйте
  * доступ к отдельным полям через методы аксессоры.
@@ -22,7 +22,7 @@ package org.itstep.task01;
  */
 public class Main {
     public static void main(String[] args) {
-        // TODO: Пишите классы в этом пакете
-        // FIXME: здесь пример использования класса
+        Human A = new Human("asd","asd", "asd","asd","asda","asdsa");
+        System.out.println(A);
     }
 }

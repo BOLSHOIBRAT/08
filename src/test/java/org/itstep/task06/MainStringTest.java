@@ -41,7 +41,7 @@ class MainStringTest {
     @Order(2)
     @ParameterizedTest(name = "{1} {0};")
     @DisplayName("Проверка закрытых полей")
-    @CsvSource({"chars,char[]"})
+    @CsvSource({"chars,char[]", "len,int"})
     void privateFieldExists(String fieldName, Class<?> type) throws NoSuchFieldException {
         hasPrivateNoStaticField(MAIN_STRING_CLAZZ, fieldName, type);
     }
@@ -70,14 +70,14 @@ class MainStringTest {
         Assertions.assertEquals(3, declaredConstructors.length, "Должно быть три конструктора");
 
         // Конструктор со строковым литералом
-        Constructor<?> ctor = MAIN_STRING_CLAZZ.getDeclaredConstructor(CharSequence.class);
+        Constructor<?> ctor = MAIN_STRING_CLAZZ.getDeclaredConstructor(String.class);
 
         Object str = TestUtil.getExpected(String.class);
 
         Object obj = ctor.newInstance(str);
 
         Method toString = MAIN_STRING_CLAZZ.getDeclaredMethod("toString");
-        Assertions.assertEquals(str, toString.invoke(obj), "Конструктор с CharSequence");
+        Assertions.assertEquals(str, toString.invoke(obj), "Конструктор со строковым литералом");
 
         // Конструктор с символом и размером строки
         ctor = MAIN_STRING_CLAZZ.getDeclaredConstructor(char.class, int.class);

@@ -1,5 +1,5 @@
 package org.itstep.task03;
-
+import org.itstep.task02.City;
 /**
  * Задание 3
  * <p>
@@ -33,6 +33,12 @@ package org.itstep.task03;
  */
 public class Main {
     public static void main(String[] args) {
-        // FIXME: здесь пример использования класса
+        City A1 = new City("AW","AS","AR",50,"6","4");
+        Country B1 = new Country();
+        B1.addCity(A1);
+        B1.addCity(A1);
+        B1.addCity(A1);
+        B1.addCity(A1);
+        System.out.println(B1.getInhabitants());
     }
 }
